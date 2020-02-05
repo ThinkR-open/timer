@@ -8,8 +8,6 @@
   <meta name="description" content="Timer">
   <meta name="author" content="ThinkR">
   
-  <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="custom.css">
 
 </head>
@@ -54,6 +52,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   let ticker_interv = setInterval(tick, 1000);
+  
+  window.onresize = function(){
+    let timer = document.querySelector("#timer");
+    timer.style.fontSize = timer.offsetWidth / 2 + "px";
+  };
+  
 });
 
 </script>

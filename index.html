@@ -42,7 +42,12 @@ document.addEventListener("DOMContentLoaded", function() {
       min.innerHTML = minnum - 1
       }
     } else {
-    	sec.innerText = secnum - 1
+      var minone = secnum - 1;
+      minone = minone.toString();
+      if (minone.length === 1){
+        minone = "0" + minone
+      }
+    	sec.innerText = minone
     }
   }
 

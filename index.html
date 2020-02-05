@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Online timer</title>
+  <meta name="description" content="Timer">
+  <meta name="author" content="ThinkR">
+  
+  <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="custom.css">
+
+</head>
+
+<body>
+<div id = "timer" >
+  <span id = "minutes"></span>:<span id = "seconds"></span>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const minq = window.location.search.split("?")[1]
+  if (minq) {
+    document.querySelector("#minutes").innerHTML = minq;
+  } else {
+    document.querySelector("#minutes").innerHTML = "5";
+  }
+  
+  document.querySelector("#seconds").innerHTML = "00";
+	function tick() {
+  	var sec = document.querySelector("#seconds");
+    var secnum = parseInt(sec.innerHTML)
+    if (secnum === 0){
+      var min = document.querySelector("#minutes");
+      var minnum = parseInt(min.innerHTML);
+      if (minnum === 0){
+        clearInterval(ticker_interv)
+      } else {
+      sec.innerText = 59
+      min.innerHTML = minnum - 1
+      }
+    } else {
+    	sec.innerText = secnum - 1
+    }
+  }
+
+  var ticker_interv = setInterval(tick, 1000);
+});
+
+</script>
+
+</body>
+</html>

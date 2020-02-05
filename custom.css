@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Signika&display=swap');
+
+body {
+  font-family: 'Signika', sans-serif;
+}
+
+#timer{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20em;
+}

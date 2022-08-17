@@ -1,0 +1,12 @@
+/** * tsconfig.json * Configuration file in the project folder for the Typescript compiler */
+/* from https://svijaykoushik.github.io/blog/2019/09/27/typescript-dom-manipulation/ */
+{
+    "compilerOptions": {
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "strict": true,
+        "target": "es2015"
+    }
+}

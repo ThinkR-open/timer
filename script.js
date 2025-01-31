@@ -67,7 +67,8 @@ refresh_page = function () {
 	if (!input) {
 		input = 5;
 	}
-    window.location.href = window.location.origin + '/?' + input;
+    const new_href = window.location.origin + window.location.pathname + '?' + input;
+    window.location.href = new_href
 };
 
 function getSearchParam(param) {

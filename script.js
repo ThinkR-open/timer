@@ -1,6 +1,6 @@
-// We query the timer object. We want it to be of type 
-// HTMLHeadingElement so that it can only 
-// receive a heading element. 
+// We query the timer object. We want it to be of type
+// HTMLHeadingElement so that it can only
+// receive a heading element.
 // Other type could have been HTMLElement, an interface for all html elements
 // but it's a larger type.
 var timer = document.querySelector("#timer");
@@ -12,7 +12,7 @@ var minutes = loc.search.split("?")[1];
 var doc = document.querySelector("#minutes");
 // If there is a minute query param, we'll set the innerHTML
 // of #minutes to that value.
-// That means that we always start with NUMBER:00 as a default, 
+// That means that we always start with NUMBER:00 as a default,
 // i.e the minutes values is always 0 at the start.
 if (minutes) {
     doc.innerHTML = minutes;
@@ -40,7 +40,7 @@ function tick() {
             clearInterval(ticker_interv);
         }
         else {
-            // Here, the seconds is 0, so we'll set it back to 
+            // Here, the seconds is 0, so we'll set it back to
             //59 and decrement the minutes.
             updateByQS("#seconds", "59");
             updateByQS("#minutes", (minnum - 1).toString());
@@ -57,7 +57,15 @@ function tick() {
 }
 var ticker_interv = setInterval(tick, 1000);
 window.onresize = function () {
-    // Reupdate the font size of the timer whenever the 
+    // Reupdate the font size of the timer whenever the
     // window is resized. We reuse the global timer variable.
     timer.style.fontSize = timer.offsetWidth / 2 + "px";
+};
+
+refresh_page = function () {
+	var input = document.getElementById('urlInput').value;
+	if (!input) {
+		input = 5;
+	}
+    window.location.href = window.location.origin + '/?' + input;
 };

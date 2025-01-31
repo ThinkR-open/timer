@@ -69,3 +69,20 @@ refresh_page = function () {
 	}
     window.location.href = window.location.origin + '/?' + input;
 };
+
+function getSearchParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const value = urlParams.keys().next().value;
+    if (value) {
+        return value
+    } else {
+        return 5;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const number = getSearchParam('number');
+    if (number) {
+        document.getElementById('urlInput').value = number;
+    }
+});
